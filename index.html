@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#917252"/>
+    <title>Zolanda &#9829; Radhika || Iqlima &#9829; Maulana</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="asset/image/favicon.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js" integrity="sha256-8WqyJLuWKRBVhxXIL1jBDD7SDxU936oZkCnxQbWwJVw=" crossorigin="anonymous"></script>    
+    <script src="https://kit.fontawesome.com/ed2db771b9.js" crossorigin="anonymous"></script>    
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-database.js"></script>
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body onload="toggle(),create_unfinished_task()">  
+    
+    <div id="popup">
+        <div class="title">
+            <!-- <img style= "opacity: 0.5;"src="asset/image/flower.png" alt="flower"> -->
+            <h1 data-aos="fade-down" data-aos-duration="3000">Welcome to</h1>
+            <h3 data-aos="fade-down" data-aos-duration="3000">The Wedding Celebration of</h3>
+            <div class="nama-nganten">
+                <div class="nganten" data-aos="fade-right" data-aos-duration="3000">
+                    <h4>Zolanda</h4>
+                    <h4>&</h4>
+                    <h4>Radhika</h4>
+                </div>
+                <div class="sabtu" data-aos="fade-down" data-aos-duration="3000"></div> 
+                <div class="nganten" data-aos="fade-right" data-aos-duration="3000">
+                    <h4>Iqlima</h4>
+                    <h4>&</h4>
+                    <h4>Maulana</h4>
+                </div>
+            </div>
+            <a href="#" onclick="toggle(), playing()"  data-aos="zoom-in" data-aos-duration="3000"><i class="fas fa-heart"></i> Open Invitation</a>
+        </div>
+    </div>
+
+    <audio id="song" hidden loop> 
+        <source src="asset/audio/canthelp.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="top">
+        <div class="container">
+            <div class="banner-carve">
+                <div class="content-top">
+                    <h2 data-aos="fade-down" data-aos-duration="2000">WE ARE GETTING MARRIED</h2>
+                    <div class="nama-nganten">
+                        <div class="nganten" data-aos="zoom-in" data-aos-duration="3000">
+                            <h4>Zolanda</h4>
+                            <h4>&</h4>
+                            <h4>Radhika</h4>
+                        </div>
+                        <div class="sabtu" data-aos="fade-down" data-aos-duration="3000"></div> 
+                        <div class="nganten" data-aos="zoom-in" data-aos-duration="3000">
+                            <h4>Iqlima</h4>
+                            <h4>&</h4>
+                            <h4>Maulana</h4>
+                        </div>
+                    </div>
+                    <!-- <h5 data-aos="fade-right" data-aos-duration="2000">Zolanda & Radhika<h5>
+                        <h5 data-aos="fade-right" data-aos-duration="2000">Iqlima & Maulana<h5></h5> -->
+                    <h2 >Juni 16, 2021</h2>
+                </div>
+            </div>
+        </div>
+    </div>    
+    
+    <div class="arrum">
+        <img data-aos="zoom-in" data-aos-duration="2000" src="asset/image/flower-bouquet.png" alt="himaya">
+        <p data-aos="zoom-in" data-aos-duration="2000">“And of His signs is that He created for you from yourselves mates that you may find tranquillity in them; and He placed between you affection and mercy. Indeed in that are signs for a people who give thought.”</p>
+        <h2 data-aos="zoom-in" data-aos-duration="2000"><b>( QS. Ar- Rum 21 )</b></h2>
+    </div>
+
+    <div class="love">
+        <div class="custom-shape-divider-top">
+            <img src="asset/image/atas-putih.png" alt="">
+        </div>
+        <p data-aos="zoom-in" data-aos-duration="2000">We Found Love</p>
+        <hr style="color: black;">
+        
+    </div>
+
+    <!-- <div class="gambar1"></div> -->
+
+    <!-- <div class="story">
+        
+        <p data-aos="fade-up" data-aos-duration="3000">
+            Kami adalah teman sekolah, pada awalnya. Seperti pada umumnya anak sekolah,
+            kami sering bertemu, berbincang dan saling berbagi cerita. Namun, 
+            setelah kami lulus sekolah kami disibukkan dengan kegiatan kami masing-masing.
+            Walaupun demikian, hubungan silaturrahmi tetap kami jaga. Sekadar menyapa di
+            media sosial maupun lainnya menjadi jembatan kami untuk tetap berkomunikasi.
+            Tujuh tahun tidak terasa telah kami lewati dengan kehidupan kami masing-masing. 
+            Hingga akhirnya kami dipertemukan kembali dalam kedewasaan masing-masing dan mempersatukan
+            kami dalam janji suci pernikahan.
+        </p>
+        
+    </div>
+
+    <div class="gambar1">
+        <img src="asset/image/flower.png" alt="himaya" data-aos="zoom-in" data-aos-duration="3000">
+    </div> -->
+
+    <div class="story1">
+        <!-- <div class="custom-shape-divider-top">
+            <img src="asset/image/atas-putih.png" alt="">
+        </div> -->
+        <p data-aos="fade-right" data-aos-duration="3000">“Being someone’s first love may be great, but to be their last is beyond perfect.”</p>
+    </div>
+
+    <div class="bride-groom">
+        <div class="pengantinPP">
+            <div class="pengantin" data-aos="fade-up" data-aos-duration="2000">
+                <p>The 1st Bride</p>
+                <!-- <img src="asset/image/maya.png" alt=""> -->
+                <span>Zolanda Rokhifatul Imayyah</span>
+                Putri dari Bpk. Moch. Pahala Spd.I dan Ibu Wiwin Fitriyani
+                <!-- <a href="https://instagram.com/himayafarah" target="_blank" style="color: #917252; text-decoration: none; font-size: 40px;"><img src="asset/image/ig.png" alt="instagram"></a> -->
+                <br><br>
+                <p>The 1st Groom</p>
+                <!-- <img src="asset/image/maya.png" alt=""> -->
+                <span>Radhika Abi Kusuma</span>
+                Putra dari Bpk. Ujianto Trio Handoko dan Ibu Kanti Ningsih
+            </div>
+        </div>
+        <div class="pengantinPP">
+            <div class="pengantin" data-aos="fade-up" data-aos-duration="2000">
+                <p>The 2nd Bride</p>
+                <!-- <img src="asset/image/ilyas.png" alt=""> -->
+                <span>Iqlima Wilda Faqiha</span>
+                Putri dari Bpk. Moch. Pahala Spd.I dan Ibu Wiwin Fitriyani
+                <!-- <a href="https://instagram.com/rikasilyas" target="_blank" style="color: #917252; text-decoration: none; font-size: 40px;"><img src="asset/image/ig.png" alt="instagram"></a> -->
+                <br><br>
+                <p>The 2nd Groom</p>
+                <!-- <img src="asset/image/maya.png" alt=""> -->
+                <span>Maulana Muhammad Fadlulloh</span>
+                Putra dari Bpk. Darsim Dimyati dan Ibu Rohmah
+            </div>
+        </div>
+    </div>
+
+    <div class="akad-resepsi">
+        <div class="custom-shape-divider-top">
+            <img src="asset/image/atas.png" alt="">
+        </div>
+        <div class="akad-resepsiCard" >
+            <div class="akad" data-aos="fade-up" data-aos-duration="2000">
+                <img src="asset/image/Ring-1.png" alt="">
+                <p>Akad Nikah</p>
+                <p>• • • • • • • • • • • • • • • • • • • • </p>
+                Telah selesai dilaksanakan <br>
+                pada tanggal 21 Mei 2021 dan 22 Juli 2019
+                <span>Pondok Wali Barokah Kediri</span>
+                Jl. H.O.S Cokro Aminoto No 195, Burengan, Pesantren, Kediri
+                <a href="https://goo.gl/maps/SGvpe1XANQ7w9i9T7"><img src="asset/image/loc.png" alt="location"> View Location</a>
+            </div>
+            <div class="resepsi" data-aos="fade-up" data-aos-duration="2000">
+                <img src="asset/image/Party.png" alt="">
+                <p>Resepsi</p>
+                <p>• • • • • • • • • • • • • • • • • • • • </p>
+                Minggu, 13 Juni 2021 <br>
+                10:00 s/d 11:00
+                <span>Pondok Wali Barokah Kediri</span>
+                Jl. H.O.S Cokro Aminoto No 195, Burengan, Pesantren, Kediri
+                <a href="https://goo.gl/maps/SGvpe1XANQ7w9i9T7"><img src="asset/image/loc.png" alt="location">View Location</a>
+            </div>
+        </div>
+        <!-- <div class="custom-shape-divider-bottom">
+            <img src="asset/image/bawah.png" alt="">
+        </div> -->
+        <div id="counting">
+            <!-- <div class="container"> -->
+                <div class="count-down" data-aos="zoom-in" data-aos-duration="2000">
+                    <p>
+                        Counting down to the big day
+                    </p>
+                    <div class="time">
+                        <div id="habis"></div>
+                        <div class="times" id="times">
+                            <div id="day"></div>
+                            <div class="font-smaller">day(s)</div>
+                        </div>
+    
+                        <div class="separator" id="separator">:</div>
+                        
+                        <div class="times" id="times1">
+                            <div id="hour"></div>
+                            <div class="font-smaller">hour(s)</div>
+                        </div>
+                        
+                        <div class="separator" id="separator1">:</div>
+                        
+                        <div class="times" id="times2">
+                            <div id="minute"></div>
+                            <div class="font-smaller">minutes(s)</div>
+                        </div>
+                        
+                        <div class="separator" id="separator2"> :</div>
+                        
+                        <div class="times" id="times3">
+                            <div id="second"></div>
+                            <div class="font-smaller">second(s)</div>
+                        </div>
+                    </div>
+    
+                </div>
+            <!-- </div> -->
+        </div>
+    </div>
+
+    <!-- <div id="counting">
+        <div class="container">
+            <div class="count-down">
+                <p>
+                    Counting down to the big day
+                </p>
+                <div class="time">
+                    <div id="habis"></div>
+                    <div class="times" id="times">
+                        <div id="day"></div>
+                        <div class="font-smaller">day(s)</div>
+                    </div>
+
+                    <div class="separator" id="separator">:</div>
+                    
+                    <div class="times" id="times1">
+                        <div id="hour"></div>
+                        <div class="font-smaller">hour(s)</div>
+                    </div>
+                    
+                    <div class="separator" id="separator1">:</div>
+                    
+                    <div class="times" id="times2">
+                        <div id="minute"></div>
+                        <div class="font-smaller">minutes(s)</div>
+                    </div>
+                    
+                    <div class="separator" id="separator2"> :</div>
+                    
+                    <div class="times" id="times3">
+                        <div id="second"></div>
+                        <div class="font-smaller">second(s)</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div> -->
+
+    <div class="story1">
+        <div class="custom-shape-divider-top">
+            <img src="asset/image/atas-putih.png" alt="">
+        </div>
+        <p data-aos="fade-up" data-aos-duration="2000" class="josefin">Tanpa mengurangi rasa hormat, sehubungan dengan situasi pandemi COVID-19,
+            kami memohon maaf yang sebesar-besarnya karena hanya dapat mengundang keluarga dan kerabat terdekat.
+            Mohon doa restu dari Bapak, Ibu dan Rekan-Rekan
+            untuk kelancaran acara pernikahan kami.
+        </p>
+          
+    </div>
+
+    <div class="protokol">
+        <div class="prokes" data-aos="fade-up" data-aos-duration="3000">
+            <img src="asset/image/Prokes.png" alt="">
+        </div>
+        <div class="custom-shape-divider-bottom">
+            <img src="asset/image/bawah-putih.png" alt="">
+        </div>  
+    </div>
+
+    <div class="hadiah">
+        <div class="ucapan-hadiah" data-aos="fade-up" data-aos-duration="2000">
+            <h1>Kirim Hadiah</h1>
+            <p>Kami mengucapkan terima kasih kepada Bapak/Ibu/Kerabat & Sahabat yang telah berkenan mengirimkan
+            hadiah bagi pernikahan kami. Hadiah dapat dikirimkan melalui:</p> 
+        </div>
+        <div class="wrapper-box-hadiah">
+            
+            <div class="box-hadiah" data-aos="fade-up" data-aos-duration="2000">
+                <h1>BANK TRANSFER</h1>
+                <hr>
+                <p>BRI</p>
+                <p style="color: #917252;">&zwj;320501035244533</p>
+                <p>a.n Radhika Abi Kusuma</p>
+            </div>
+            
+            <div class="box-hadiah" data-aos="fade-up" data-aos-duration="2000">
+                <h1>BANK TRANSFER</h1>
+                <hr>
+                <p>BRI</p>
+                <p style="color: #917252;">&zwj;625601029120539</p>
+                <p>a.n Iqlima Wilda Faqiha</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="asset/image/cover.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="asset/image/cover.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="asset/image/cover.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="asset/image/cover.jpg" style="width:100%">
+        </div>
+        
+        <div class="mySlides fade">
+            <img src="asset/image/cover.jpg" style="width:100%">
+        </div>
+        
+        <div class="mySlides fade">
+            <img src="asset/image/cover.jpg" style="width:100%">
+        </div>
+    </div>
+
+
+    <div class="contact-us box">
+        <!-- <div class="custom-shape-divider-top">
+            <img src="asset/image/atas.png" alt="">
+        </div> -->
+        <h2>Wishes For Us</h2>
+        <p>Tinggalkan do'a/pesan/harapan untuk Himaya & Ilyas</p>
+        <a href="#newcomment">
+            <button> 💌 Tuliskan Pesan..</button>
+        </a>
+
+        <div class="container1"></div>
+
+        <div class="footer-content">
+            <form id="newcomment">
+                <div class="form-elements">
+                    <input id="name"  type="text" placeholder="Nama anda / Nama anda sekeluarga" required/>
+                    <textarea id="message" rows="2" placeholder="Tuliskan do'a/pesan/harapan anda disini..." required></textarea>
+                    <div class="btn">
+                        <button id="input_button" onclick="add_task()" >Send</button>
+                    </div> 
+                </div>
+            </form>
+        </div>
+        
+    </div>
+
+    <div class="thankyou">
+        <h2>Thank You</h2>
+        <div class="nama-nganten" style="margin: 30px 0;">
+            <div class="nganten" data-aos="zoom-in" data-aos-duration="3000">
+                <h4>Zolanda</h4>
+                <h4>&</h4>
+                <h4>Radhika</h4>
+            </div>
+            <div class="sabtu" data-aos="fade-down" data-aos-duration="3000"></div> 
+            <div class="nganten" data-aos="zoom-in" data-aos-duration="3000">
+                <h4>Iqlima</h4>
+                <h4>&</h4>
+                <h4>Maulana</h4>
+            </div>
+        </div>
+        <div class="custom-shape-divider-bottom">
+            <img src="asset/image/bawah.png" alt="">
+        </div>
+    </div>
+    
+
+    <div class="footer">
+        <p >Made with full of &#10084; by .</p>
+        <a href="https://undanganmanten.my.id" target="_blank">Undangan Manten.</a>
+    </div>
+
+    <div class="loader-wrapper">
+        <!-- <span class="loader">
+            <span class="loader-inner"></span>
+        </span> -->
+        <div id="heart"></div>
+        <br>
+        <div class="nama-nganten">
+            <div class="nganten">
+                <h4>Zolanda</h4>
+                <h4>&</h4>
+                <h4>Radhika</h4>
+            </div>
+            <div class="sabtu"></div> 
+            <div class="nganten">
+                <h4>Iqlima</h4>
+                <h4>&</h4>
+                <h4>Maulana</h4>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js" type="text/javascript"></script>
+</body>
+</html>
